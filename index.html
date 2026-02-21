@@ -14,6 +14,10 @@
 
     <!-- tailwind css add link -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <!-- daisyUI -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
     
     <title>Document</title>
 
@@ -22,8 +26,7 @@
         * {
             font-family: "Geist", sans-serif;
         }
-
-
+        
     </style>
 
 </head>
@@ -48,8 +51,22 @@
         </div>
     </header>
     <main class="md:mb-8 md:container md:mx-auto md:max-w-[69.375rem]">
-        <div>
-            
+        <div class="">
+            <h2 class="text-xl text-[#002C5C] font-semibold mb-6">Available Jobs</h2>
+
+            <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                <div class="gap-2">
+                    
+                    <button id="btn-All" class="btn rounded-sm px-8 py-2.5 btn-pill-active text-[#64748B] border-[#F1F2F4] bg-[#FFFFFF] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('All')">All</button>
+                    <button id="btn-Interview" class="btn rounded-sm px-8 py-2.5 text-[#64748B] border-[#F1F2F4] bg-[#FFFFFF] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('Interview')">Interview</button>
+                    <button id="btn-Rejected" class="btn border-[#F1F2F4] bg-[#FFFFFF] rounded-sm px-8 py-2.5 text-[#64748B] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('Rejected')">Rejected</button>
+
+                </div>
+                <span id="btn-job-count" class="text-base font-medium text-[#64748B]">8 jobs</span>
+            </div>
+        </div>
+
+        <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
     </main>
 </body>
