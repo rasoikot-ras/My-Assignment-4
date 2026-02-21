@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font icon  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- tailwind css add link -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
@@ -14,10 +22,35 @@
         * {
             font-family: "Geist", sans-serif;
         }
+
+
     </style>
 
 </head>
-<body>
-
+<body class="body-set bg-[#F8FAFC]">
+    <header class="md:pt-15 md:mb-8 md:container md:mx-auto md:max-w-[69.375rem]">
+        <div class="border-b-1 border-[#E6E7E9]">
+            <h1 class="md:text-[2rem] font-bold text-[#002C5C] mb-5">Job Application Tracker</h1>
+            <div class="flex flex-wrap gap-4 justify-center mb-[1.875rem]">
+                <div class="bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-5 w-[22.44rem] shadow-sm ">
+                    <p class="text-[#323B49] text-sm">Total</p>
+                    <h3 class="text-2xl text-[#002C5C] font-bold">8</h3>
+                </div>
+                <div class="bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-5 w-[22.44rem] shadow-sm ">
+                    <p class="text-[#323B49] text-sm">Interview</p>
+                    <h3 class="text-2xl text-[#10B981] font-bold">0</h3>
+                </div>
+                <div class="bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-5 w-[22.44rem] shadow-sm ">
+                    <p class="text-[#323B49] text-sm">Rejected</p>
+                    <h3 class="text-2xl text-[#EF4444] font-bold">0</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="md:mb-8 md:container md:mx-auto md:max-w-[69.375rem]">
+        <div>
+            
+        </div>
+    </main>
 </body>
 </html>
