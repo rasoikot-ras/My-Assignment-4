@@ -17,7 +17,7 @@
 
 
     <!-- daisyUI -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
     <title>Document</title>
 
@@ -27,14 +27,20 @@
             font-family: "Geist", sans-serif;
         }
         
+        /* active btn style */
+        .active-btn {
+            background-color: #3B82F6 !important;
+            color: #FFFFFF !important;
+            border-color: #3B82F6 !important;
+        }
     </style>
 
 </head>
 <body class="body-set bg-[#F8FAFC]">
-    <header class="md:pt-15 md:mb-8 md:container md:mx-auto md:max-w-[69.375rem]">
-        <div class="border-b-1 border-[#E6E7E9]">
+    <header class="md:pt-15 md:mb-8 md:container md:mx-auto md:max-w-277.5">
+        <div class="border-b border-[#E6E7E9]">
             <h1 class="md:text-[2rem] font-bold text-[#002C5C] mb-5">Job Application Tracker</h1>
-            <div class="flex flex-wrap gap-4 justify-center mb-[1.875rem]">
+            <div class="flex flex-wrap gap-4 justify-center mb-7.5">
                 <div class="bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-5 w-[22.44rem] shadow-sm ">
                     <p class="text-[#323B49] text-sm">Total</p>
                     <h3 class="text-2xl text-[#002C5C] font-bold">8</h3>
@@ -50,14 +56,14 @@
             </div>
         </div>
     </header>
-    <main class="md:mb-8 md:container md:mx-auto md:max-w-[69.375rem]">
+    <main class="md:mb-8 md:container md:mx-auto md:max-w-277.5">
         <div class="">
             <h2 class="text-xl text-[#002C5C] font-semibold mb-6">Available Jobs</h2>
 
             <div class="flex flex-col md:flex-row justify-between items-center mb-4">
                 <div class="gap-2">
                     
-                    <button id="btn-All" class="btn rounded-sm px-8 py-2.5 btn-pill-active text-[#64748B] border-[#F1F2F4] bg-[#FFFFFF] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('All')">All</button>
+                    <button id="btn-All" class="btn active-tab rounded-sm px-8 py-2.5 text-[#64748B] border border-[#F1F2F4] bg-[#FFFFFF] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('All')">All</button>
                     <button id="btn-Interview" class="btn rounded-sm px-8 py-2.5 text-[#64748B] border-[#F1F2F4] bg-[#FFFFFF] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('Interview')">Interview</button>
                     <button id="btn-Rejected" class="btn border-[#F1F2F4] bg-[#FFFFFF] rounded-sm px-8 py-2.5 text-[#64748B] hover:bg-[#3B82F6] hover:text-[#FFFFFF] cursor-pointer text-sm active:scale-80 transition-all duration-300" onclick="changeTab('Rejected')">Rejected</button>
 
@@ -66,8 +72,11 @@
             </div>
         </div>
 
-        <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="jobs-container" class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-6">
         </div>
     </main>
+
+
+    <script src="./js/project.js"></script>
 </body>
 </html>
