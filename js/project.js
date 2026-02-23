@@ -125,7 +125,7 @@ mainContainer.addEventListener('click', function (event){
         const jobInfo = parentNode.querySelector('.information').innerText;
         const jobStatus = parentNode.querySelector('.status').innerText;
         const jobNotes = parentNode.querySelector('.notes').innerText;
-    // const job = parentNode.querySelector('.notes').innerText;
+        // const job = parentNode.querySelector('.notes').innerText;
 
         parentNode.querySelector('.status').innerText = 'INTERVIEW'
         parentNode.querySelector('.status').classList.remove('bg-[#EEF4FF]', 'text-[#002C5C]', 'bg-[#EF4444]', 'text-[#FFFFFF]');
@@ -152,6 +152,7 @@ mainContainer.addEventListener('click', function (event){
             renderRejectedview();
 
         }
+        
         
         
         calculateCount()
@@ -322,9 +323,9 @@ function renderEmptyjob(container) {
     if(!container) return;
     container.innerHTML = `
         <div class="bg-[#FFFFFF] rounded-lg border-[#F1F2F4] flex flex-col justify-center items-center py-27.75">
-            <img class="pb-5" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="">
-            <h2 class="text-2xl text[#002C5C] font-semibold pb-1">No jobs available</h2>
-            <p class="text-base text-[#64748B]">
+            <img class="pb-5 md:h-auto h-14" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="">
+            <h2 class="md:text-2xl text-lg text[#002C5C] font-semibold pb-1">No jobs available</h2>
+            <p class="md:text-base text-xs text-[#64748B]">
                 Check back soon for new job opportunities
             </p>
         </div>

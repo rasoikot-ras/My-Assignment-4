@@ -32,10 +32,10 @@
 
 </head>
 <body class="body-set bg-[#F8FAFC]">
-    <header class="md:pt-15 md:mb-8 md:container md:mx-auto md:max-w-277.5">
+    <header class="md:pt-15 pt-7 mb-4 md:mb-8 md:container md:mx-auto mx-4 md:max-w-277.5">
         <div class="border-b border-[#E6E7E9]">
-            <h1 class="md:text-[2rem] font-bold text-[#002C5C] mb-5">Job Application Tracker</h1>
-            <div class="flex flex-wrap gap-4 justify-center mb-7.5">
+            <h1 class="md:text-[2rem] text-2xl font-bold text-[#002C5C] mb-5 text-center md:text-left">Job Application Tracker</h1>
+            <div class="flex flex-row  md:flex-wrap gap-4 md:justify-center mb-7.5">
                 <div class="bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-5 w-[22.44rem] shadow-sm ">
                     <p class="text-[#323B49] text-sm mb-2">Total</p>
                     <p id="total" class="text-2xl text-[#002C5C] font-bold">8</p>
@@ -51,11 +51,11 @@
             </div>
         </div>
     </header>
-    <main class="md:mb-8 md:container md:mx-auto md:max-w-277.5">
+    <main class="md:mb-8 md:container md:mx-auto mx-4 md:max-w-277.5">
         <div class="">
-            <h2 class="text-xl text-[#002C5C] font-semibold mb-6">Available Jobs</h2>
+            <h2 class="text-xl text-center md:text-left text-[#002C5C] font-semibold mb-3 md:mb-6">Available Jobs</h2>
 
-            <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div class="flex flex-col md:flex-row md:justify-between items-center mb-4">
                 <div class="gap-2">
                     
                     <button onclick="toggleStyle('btn-all-sec')" id="btn-all-sec" class=" rounded-sm px-8 py-2.5 text-[#FFFFFF] border-[#F1F2F4] bg-[#3B82F6] cursor-pointer text-sm active:scale-80 transition-all duration-300" >All</button>
@@ -65,7 +65,7 @@
                     <button onclick="toggleStyle('btn-rejected')" id="btn-rejected" class=" border-[#F1F2F4] bg-[#FFFFFF] rounded-sm px-8 py-2.5 text-[#64748B]  cursor-pointer text-sm active:scale-80 transition-all duration-300" >Rejected</button>
 
                 </div>
-                <span id="btn-job-count" class="text-base font-medium text-[#64748B]">8 jobs</span>
+                <span id="btn-job-count" class="text-base font-medium text-[#64748B] md:mt-0 mt-4">8 jobs</span>
             </div>
         </div>
 
