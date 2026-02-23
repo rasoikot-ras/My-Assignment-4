@@ -1,4 +1,4 @@
-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+##1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
 ans:- getElementById: It retrieves a specific element using its unique ID. Since IDs are unique, it is used to access a single, specific element.
 
@@ -11,7 +11,7 @@ querySelector: Returns only the first element that matches the given CSS selecto
 querySelectorAll: Returns all matching elements as a NodeList.
 
 
-2. How do you create and insert a new element into the DOM?
+##2. How do you create and insert a new element into the DOM?
 
 ans:- The process of creating and inserting a new element into the DOM is mainly completed in two steps:
 
