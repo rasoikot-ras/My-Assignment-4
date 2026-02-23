@@ -290,7 +290,7 @@ function renderAllJobs() {
     
     for (let job of allJobsList) {
         let div = document.createElement('div');
-        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6';
+        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6 hover:border-gray-500 hover:scale-101 transition-all duration-300 border-2 border-transparent';
         
         let statusColor = "bg-[#EEF4FF] text-[#002C5C]"; 
         if(job.jobStatus == "INTERVIEW"){
@@ -327,7 +327,7 @@ function renderInterview(){
         console.log(interViews)
 
         let div = document.createElement('div');
-        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6';
+        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6 hover:border-gray-500 hover:scale-101 transition-all duration-300 border-2 border-transparent';
         div.innerHTML = `
                         <div class="flex justify-between items-start">
                     <div>
@@ -370,7 +370,7 @@ function renderRejectedview(){
         console.log(rejectedview)
 
         let div = document.createElement('div');
-        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6';
+        div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6 hover:border-gray-500 hover:scale-101 transition-all duration-300 border-2 border-transparent';
         div.innerHTML = `
                         <div class="flex justify-between items-start">
                     <div>
