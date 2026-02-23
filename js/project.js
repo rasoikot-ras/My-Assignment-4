@@ -293,10 +293,10 @@ function renderAllJobs() {
         div.className = 'jobcard bg-[#FFFFFF] border-[#F1F2F4] rounded-lg p-6';
         
         let statusColor = "bg-[#EEF4FF] text-[#002C5C]"; 
-        if(job.jobStatus === "INTERVIEW"){
+        if(job.jobStatus == "INTERVIEW"){
             statusColor = "bg-[#10B981] text-[#FFFFFF]";
         }
-        if(job.jobStatus === "REJECTED") {
+        if(job.jobStatus == "REJECTED") {
             statusColor = "bg-[#EF4444] text-[#FFFFFF]";
         }
 
@@ -313,7 +313,7 @@ function renderAllJobs() {
                         <button class="rejectedr border border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-sm text-sm font-semibold hover:bg-red-50 cursor-pointer">Rejected</button>
                     </div>
                 </div>
-                <button class="btn-delete text-gray-300 hover:text-red-500"><i class="fa-regular fa-trash-can"></i></button>
+                <button class="btn-delete text-[#64748B] hover:text-[#EF4444]"><i class="fa-regular fa-trash-can"></i></button>
             </div>`;
         allCardSection.appendChild(div);
     }
@@ -350,7 +350,7 @@ function renderInterview(){
                         </div>
                     </div>
 
-                    <button class="btn-delete text-[#F1F2F4] hover:text-[#EF4444] transition-colors">
+                    <button class="btn-delete text-[#64748B] hover:text-[#EF4444] transition-colors">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
@@ -393,7 +393,7 @@ function renderRejectedview(){
                         </div>
                     </div>
 
-                    <button class="btn-delete text-gray-300 hover:text-red-500 transition-colors">
+                    <button class="btn-delete text-[#64748B] hover:text-[#EF4444] transition-colors">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
