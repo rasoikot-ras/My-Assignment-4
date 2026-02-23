@@ -28,12 +28,6 @@
             font-family: "Geist", sans-serif;
         }
         
-        /* active btn style */
-        .active-btn {
-            background-color: #3B82F6 !important;
-            color: #FFFFFF !important;
-            border-color: #3B82F6 !important;
-        }
     </style>
 
 </head>
@@ -64,7 +58,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-4">
                 <div class="gap-2">
                     
-                    <button onclick="toggleStyle('btn-all')" id="btn-all" class=" rounded-sm px-8 py-2.5 text-[#FFFFFF] border-[#F1F2F4] bg-[#3B82F6] cursor-pointer text-sm active:scale-80 transition-all duration-300" >All</button>
+                    <button onclick="toggleStyle('btn-all-sec')" id="btn-all-sec" class=" rounded-sm px-8 py-2.5 text-[#FFFFFF] border-[#F1F2F4] bg-[#3B82F6] cursor-pointer text-sm active:scale-80 transition-all duration-300" >All</button>
 
                     <button onclick="toggleStyle('btn-interview')" id="btn-interview" class=" rounded-sm px-8 py-2.5 text-[#64748B] border-[#F1F2F4] bg-[#FFFFFF]  cursor-pointer text-sm active:scale-80 transition-all duration-300" >Interview</button>
                     
@@ -78,14 +72,7 @@
         <!-- filtered card -->
         
         <section id="filtered-section" class="hidden">
-            <div class="bg-[#FFFFFF] rounded-lg border-[#F1F2F4] text-center">
-                <img src="./B13-A4-PH-Job-Tracker/jobs.png" alt="">
-                <h2>No jobs available</h2>
-                <p>
-                    Check back soon for new job opportunities
-                </p>
-            </div>
-
+            
         </section>
 
         <section id="allcards" class=" grid grid-cols-1  gap-4">

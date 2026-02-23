@@ -1,6 +1,6 @@
 let interViewlist = [];
 let rejectedList = [];
-let currentStatus = 'all'
+let currentStatus = 'btn-all-sec';
 
 
 
@@ -9,7 +9,7 @@ let interView = document.getElementById('interview');
 let rejected = document.getElementById('rejected');
 
 
-const allFilterBtn = document.getElementById('btn-all');
+const allFilterBtn = document.getElementById('btn-all-sec');
 const interViewBtn = document.getElementById('btn-interview');
 const rejectedViewBtn = document.getElementById('btn-rejected');
 const jobCountBtn = document.getElementById('btn-job-count');
@@ -26,8 +26,7 @@ const filterSection = document.getElementById('filtered-section');
 // })
 
 function calculateCount() {
-    
-    const totalJobsCount = allCardSection.children.length;
+    const totalJobsCount = allCardSection.querySelectorAll('.jobcard').length;
     const interviewCount = interViewlist.length;
     const rejectedCount = rejectedList.length;
 
@@ -36,17 +35,37 @@ function calculateCount() {
     interView.innerText = interviewCount;
     rejected.innerText = rejectedCount;
 
-   
-    if (currentStatus === 'btn-all' || currentStatus === 'all') {
+   // all button a count korbe   
+    if (currentStatus == 'btn-all-sec') {
         jobCountBtn.innerText = `${totalJobsCount} jobs`;
+
+        if (totalJobsCount == 0) {
+            allCardSection.innerHTML = '';
+            renderEmptyjob(allCardSection);
+        }
     } 
-    else if (currentStatus === 'btn-interview') {
-        jobCountBtn.innerText = `${interviewCount} of ${totalJobsCount} jobs`;
-        if (interviewCount === 0) renderEmptyMessage();
+    // interview button a count korbe
+    else if (currentStatus == 'btn-interview') {
+        
+        if (interviewCount == 0) {
+            jobCountBtn.innerText = `0 jobs`;
+            renderEmptyjob(filterSection);
+        }
+        else {
+            jobCountBtn.innerText = `${interviewCount} of ${totalJobsCount} jobs`;
+        }
     } 
-    else if (currentStatus === 'btn-rejected') {
-        jobCountBtn.innerText = `${rejectedCount} of ${totalJobsCount} jobs`;
-        if (rejectedCount === 0) renderEmptyMessage();
+
+    // reject button a count korbe 
+    else if (currentStatus == 'btn-rejected') {
+        
+        if (rejectedCount == 0) {
+            jobCountBtn.innerText = `0 jobs`;
+            renderEmptyjob(filterSection);
+        }
+        else{
+            jobCountBtn.innerText = `${rejectedCount} of ${totalJobsCount} jobs`;
+        }
     }
 }
 
@@ -78,9 +97,10 @@ function toggleStyle(id){
         filterSection.classList.remove('hidden');
         renderInterview();
     }
-    else if(id == 'btn-all'){
+    else if(id == 'btn-all-sec'){
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden');
+
     }
     else if(id == 'btn-rejected'){
         allCardSection.classList.add('hidden');
@@ -106,7 +126,10 @@ mainContainer.addEventListener('click', function (event){
         const jobStatus = parentNode.querySelector('.status').innerText;
         const jobNotes = parentNode.querySelector('.notes').innerText;
     // const job = parentNode.querySelector('.notes').innerText;
+
         parentNode.querySelector('.status').innerText = 'INTERVIEW'
+        parentNode.querySelector('.status').classList.remove('bg-[#EEF4FF]', 'text-[#002C5C]', 'bg-[#EF4444]', 'text-[#FFFFFF]');
+        parentNode.querySelector('.status').classList.add('bg-[#10B981]', 'text-[#FFFFFF]');
 
         const cardInfo = {
             jobName,
@@ -127,6 +150,7 @@ mainContainer.addEventListener('click', function (event){
 
         if(currentStatus == "btn-rejected"){
             renderRejectedview();
+
         }
         
         
@@ -146,6 +170,9 @@ mainContainer.addEventListener('click', function (event){
         const jobNotes = parentNode.querySelector('.notes').innerText;
         // const job = parentNode.querySelector('.notes').innerText;
         parentNode.querySelector('.status').innerText = 'REJECTED'
+        parentNode.querySelector('.status').classList.remove('bg-[#EEF4FF]', 'text-[#002C5C]', 'bg-[#10B981]', 'text-[#FFFFFF]');
+        parentNode.querySelector('.status').classList.add('bg-[#EF4444]', 'text-[#FFFFFF]');
+
 
         const cardInfo = {
             jobName,
@@ -183,12 +210,22 @@ mainContainer.addEventListener('click', function (event){
         
         card.remove();
 
-        if (currentStatus == 'btn-interview') {
+        if (currentStatus === 'btn-all-sec') {
+            const remainingCards = allCardSection.querySelectorAll('.jobcard').length;
+            if (remainingCards == 0) {
+                allCardSection.innerHTML = ''; 
+                renderEmptyjob(allCardSection);
+            }
+        }
+
+        else if (currentStatus == 'btn-interview') {
             renderInterview();
         }
-        if (currentStatus == 'btn-rejected') {
+        else if (currentStatus == 'btn-rejected') {
             renderRejectedview();
         }
+        
+
         calculateCount();
     
     }
@@ -225,7 +262,7 @@ function renderInterview(){
                         </div>
                     </div>
 
-                    <button class="btn-delete text-gray-300 hover:text-red-500 transition-colors">
+                    <button class="btn-delete text-[#F1F2F4] hover:text-[#EF4444] transition-colors">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
@@ -278,10 +315,18 @@ function renderRejectedview(){
 
 }
 
-function renderEmptyjob() {
-    filterSection.innerHTML = `
-        <div class="text-center py-10">
-            <p class="text-[#64748B] text-lg font-medium">No jobs found in this category.</p>
+
+// No jobs available
+function renderEmptyjob(container) {
+    
+    if(!container) return;
+    container.innerHTML = `
+        <div class="bg-[#FFFFFF] rounded-lg border-[#F1F2F4] flex flex-col justify-center items-center py-27.75">
+            <img class="pb-5" src="./B13-A4-PH-Job-Tracker/jobs.png" alt="">
+            <h2 class="text-2xl text[#002C5C] font-semibold pb-1">No jobs available</h2>
+            <p class="text-base text-[#64748B]">
+                Check back soon for new job opportunities
+            </p>
         </div>
     `;
 }
